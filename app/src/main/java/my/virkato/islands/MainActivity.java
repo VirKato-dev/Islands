@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -65,9 +66,12 @@ public class MainActivity extends AppCompatActivity {
      * @param minSize минимальный размер острова
      */
     private void clean(int minSize) {
-        for (Island island : islands) {
-            if (island.getSize() < minSize) {
+        Iterator<Island> it = islands.iterator();
+        while (it.hasNext()) {
+            Island island;
+            if ((island = it.next()).getSize() < minSize) {
                 island.remove();
+                it.remove();
             }
         }
         showMatrix(table);
