@@ -87,15 +87,15 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < (height * width / 2); i++) {
             int dy = 0, dx = 0;
-            y = rand.nextInt(height - 1);
-            x = rand.nextInt(width - 1);
+            y = rand.nextInt(height);
+            x = rand.nextInt(width);
             if (x > 1 && y > 1 && x < width - 2 && y < height - 2) {
                 if (matrix[y - 2][x] == -1) dy = -1;
                 else if (matrix[y + 2][x] == -1) dy = 1;
                 else if (matrix[y][x - 2] == -1) dx = -1;
                 else if (matrix[y][x + 2] == -1) dx = 1;
-                matrix[y + dy][x + dx] = -1;
             }
+            matrix[y + dy][x + dx] = -1;
         }
     }
 
