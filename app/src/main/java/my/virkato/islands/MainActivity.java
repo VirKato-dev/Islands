@@ -17,7 +17,7 @@ import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button b_clean;
+    private Button b_new, b_clean;
     private TableLayout table;
     private int containerSize;
 
@@ -33,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         table = findViewById(R.id.table);
+
+        b_new = findViewById(R.id.b_new);
+        b_new.setOnClickListener(v -> {
+            init();
+        });
+
         b_clean = findViewById(R.id.b_clean);
         b_clean.setOnClickListener(v -> {
             clean(10);

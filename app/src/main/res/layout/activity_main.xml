@@ -11,6 +11,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/b_new"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Новая карта островов" />
+
         <LinearLayout
             android:id="@+id/l_head"
             android:layout_width="match_parent"
